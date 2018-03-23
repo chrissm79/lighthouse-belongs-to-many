@@ -8,6 +8,6 @@ class CarQuery
 {
     public function resolve($root, array $args)
     {
-        return Car::with('options')->get();
+        return Car::get();
     }
 }

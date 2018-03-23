@@ -1,7 +1,9 @@
 type Car {
   make: String!
   year: Int!
-  options: [CarOption!]!
+
+  extras: [CarOption!]! @hasMany(type: "default", relation: "options")
+  # options: [CarOption!]!
 }
 
 type CarOption {
