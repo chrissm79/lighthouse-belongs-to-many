@@ -1,0 +1,14 @@
+type Car {
+  make: String!
+  year: Int!
+  extras: [CarOption!]! @hasMany(type: "relay" relation: "options")
+}
+
+type CarOption {
+  name: String!
+  cost: Float!
+}
+
+type Query {
+  cars: [Car!]! @field(class: "App\\Http\\GraphQL\\Queries\\CarQuery" method: "resolve")
+}
